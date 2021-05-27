@@ -2,7 +2,6 @@ const stayService = require('./stay.service');
 const logger = require('../../services/logger.service');
 
 async function getStay(req, res) {
-    console.log('in backend');
 	try {
 		const stay = await stayService.getById(req.params.id);
 		res.send(stay);
