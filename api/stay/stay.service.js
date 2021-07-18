@@ -50,7 +50,7 @@ async function update(stay) {
 			name: stay.name,
 			imgUrls: stay.imgUrls,
 			price: stay.price,
-			summery: stay.summery,
+			summary: stay.summary,
 			properties: stay.properties,
 			amenities: stay.amenities,
 			host: stay.host,
@@ -72,13 +72,14 @@ async function add(stay) {
 			name: stay.name,
 			imgUrls: stay.imgUrls,
 			price: stay.price,
-			summery: stay.summery,
+			summary: stay.summary,
 			properties: stay.properties,
 			amenities: stay.amenities,
 			host: stay.host,
 			loc: stay.loc,
 			reviews: stay.reviews,
 		};
+		console.log(stayToAdd);
 		const collection = await dbService.getCollection('stay');
 		await collection.insertOne(stayToAdd);
 		return stayToAdd;
